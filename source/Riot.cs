@@ -124,7 +124,7 @@ namespace Riot
                     if (File.Exists("C:\\ProgramData\\Riot Games\\Metadata\\valorant.live\\valorant.live.product_settings.yaml"))
                     {
                         string text = File.ReadAllText("C:\\ProgramData\\Riot Games\\Metadata\\valorant.live\\valorant.live.product_settings.yaml");
-                        Regex cusRegex = new Regex("product_install_full_path: .*");
+                        Regex cusRegex = new Regex("product_install_full_path: \".*\"");
                         var result = cusRegex.Match(text).Value.Replace("product_install_full_path: ", string.Empty).Replace("\"", "");
                         return result;
                     }
